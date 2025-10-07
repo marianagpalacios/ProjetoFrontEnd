@@ -72,7 +72,7 @@ saqa/
 
 1. Baixe ou clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/saqa.git
+   git clone https://github.com/marianagpalacios/ProjetoFrontEnd.git
    
 2. Abra o arquivo login.html no navegador.
 
