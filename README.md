@@ -37,12 +37,6 @@ saqa/
 
 ├── cadastro.html # Cadastro de usuários
 
-├── notificacoes.html # Lista de notificações e alertas
-
-├── estatisticas.html # Relatórios e gráficos
-
-├── monitoramento.html # Monitoramento de unidades
-
 ├── styles.css # Estilos base do projeto
 
 
