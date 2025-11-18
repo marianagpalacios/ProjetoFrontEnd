@@ -8,4 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPesquisa = document.getElementById('inputPesquisa');
 
     const STORAGE_KEY = 'saqa_usuarios';
+
+    function carregarUsuarios() {
+        const usuariosJson = localStorage.getItem(STORAGE_KEY);
+        return usuariosJson ? JSON.parse(usuariosJson) : [];
+    }
 });
