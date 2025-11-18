@@ -6,4 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnLimparCampos = document.getElementById('btnLimparCampos');
     const btnLimparLista = document.getElementById('btnLimparLista');
     const inputPesquisa = document.getElementById('inputPesquisa');
+
+    const STORAGE_KEY = 'saqa_usuarios';
 });
