@@ -99,4 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Todos os usuários foram excluídos.');
         }
     }
+
+    function pesquisarUsuarios() {
+        const termo = inputPesquisa.value.toLowerCase().trim();
+        const usuarios = carregarUsuarios();
+
+        if (!termo) {
+            renderizarLista(usuarios); // Mostra todos se o campo estiver vazio
+            return;
+        }
+
+        const usuariosFiltrados = usuarios.filter(usuario => 
+            usuario.nome.toLowerCase().includes(termo) || 
+            usuario.email.toLowerCase().includes(termo)
+        );
+
+        renderizarLista(usuariosFiltrados);
+    }
 });
