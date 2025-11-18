@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const novoUsuario = {
-            id: Date.now(), // ID único baseado no timestamp
+            id: Date.now(), 
             nome: nome,
             email: email,
             dataCadastro: new Date().toISOString()
@@ -80,5 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
         formCadastro.reset();
         renderizarLista();
         alert('Usuário cadastrado com sucesso!');
+    }
+
+    function excluirUsuario(id) {
+        let usuarios = carregarUsuarios();
+        const idNumber = Number(id);
+        
+        usuarios = usuarios.filter(usuario => usuario.id !== idNumber);
+        
+        salvarUsuarios(usuarios);
+        renderizarLista();
     }
 });
