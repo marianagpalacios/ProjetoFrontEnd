@@ -13,4 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const usuariosJson = localStorage.getItem(STORAGE_KEY);
         return usuariosJson ? JSON.parse(usuariosJson) : [];
     }
+
+    function salvarUsuarios(usuarios) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
+    }
 });
