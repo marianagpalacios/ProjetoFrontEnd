@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         usuariosToRender.forEach((usuario, index) => {
             const li = document.createElement('li');
             li.classList.add('usuario-item');
-            // O ID é baseado no timestamp para ser único, mas usamos o index para exclusão na lista filtrada
-            // Para exclusão segura, o ID deve ser único e persistente. Vamos usar o timestamp como ID.
             li.dataset.id = usuario.id; 
 
             const dataFormatada = new Date(usuario.dataCadastro).toLocaleDateString('pt-BR', {
@@ -54,5 +52,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
             listaUsuariosUL.appendChild(li);
         });
+    }
+
+    function adicionarUsuario(event) {
+        event.preventDefault();
+
+        const nome = nomeUsuarioInput.value.trim();
+        const email = emailUsuarioInput.value.trim();
+
+        if (!nome || !email) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const novoUsuario = {
+            id: Date.now(), // ID único baseado no timestamp
+            nome: nome,
+            email: email,
+            dataCadastro: new Date().toISOString()
+        };
+
+        const usuarios = carregarUsuarios();
+        usuarios.push(novoUsuario);
+        salvarUsuarios(usuarios);
+
+        // Limpa os campos e renderiza a lista
+        formCadastro.reset();
+        renderizarLista();
+        alert('Usuário cadastrado com sucesso!');
     }
 });
