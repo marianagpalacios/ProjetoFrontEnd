@@ -91,4 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
         salvarUsuarios(usuarios);
         renderizarLista();
     }
+
+    function excluirTodosUsuarios() {
+        if (confirm('Tem certeza que deseja excluir TODOS os usuários cadastrados? Esta ação é irreversível.')) {
+            localStorage.removeItem(STORAGE_KEY);
+            renderizarLista();
+            alert('Todos os usuários foram excluídos.');
+        }
+    }
 });
