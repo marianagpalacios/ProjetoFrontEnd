@@ -232,7 +232,12 @@ body{
 #rodape_base{
   background: var(--cor-escura);
   color: #dbe0e8;
-  margin-top: 18px;
+}
+
+#rodape_admin{
+  background: var(--cor-escura);
+  color: #dbe0e8;
+  margin-top: 66px;
 }
 .rodape_conteudo{
   max-width: 1080px;
