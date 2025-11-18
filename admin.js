@@ -64,6 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, preencha todos os campos.');
             return;
         }
+        
+        const usuarios = carregarUsuarios();
+
+        const emailExistente = usuarios.some(u => u.email === email);
+
+        if(emailExistente) {
+            alert(`Olá, você já possui o seguinte e-mail já cadastrado: ${ email }`);
+            return;
+        }
 
         const novoUsuario = {
             id: Date.now(), 
@@ -72,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dataCadastro: new Date().toISOString()
         };
 
-        const usuarios = carregarUsuarios();
         
         usuarios.push(novoUsuario);
         salvarUsuarios(usuarios);
