@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const usuarios = carregarUsuarios();
+        
         usuarios.push(novoUsuario);
         salvarUsuarios(usuarios);
 
@@ -116,4 +117,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderizarLista(usuariosFiltrados);
     }
+
+    // --- Event Listeners ---
+
+    formCadastro.addEventListener('submit', adicionarUsuario);
+
+    btnLimparCampos.addEventListener('click', () => {
+        formCadastro.reset();
+    });
+
+    listaUsuariosUL.addEventListener('click', (event) => {
+        if (event.target.classList.contains('btn-excluir')) {
+            const id = event.target.dataset.id;
+            if (confirm('Tem certeza que deseja excluir este usuário?')) {
+                excluirUsuario(id);
+            }
+        }
+    });
+
+    btnLimparLista.addEventListener('click', excluirTodosUsuarios);
+
+    inputPesquisa.addEventListener('input', pesquisarUsuarios);
+
+    renderizarLista()
 });
