@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin - Cadastro de Usuários - SAQA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/imgs/logo.ico" type="image/x-icon">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+
+  <header id="topo_header">
+    <div class="topo_conteudo">
+      <a class="logo_link" href="principal.html" title="SAQA - Início">
+        <img class="logo_imagem" src="assets/imgs/logo-saqa-horizontal.png" alt="Logo SAQA" />
+      </a>
+
+      <nav id="menu_principal">
+        <a href="principal.html#secao_o_que_e" class="menu_item">O que é</a>
+        <a href="principal.html#secao_beneficios" class="menu_item">Benefícios</a>
+        <a href="principal.html#secao_como_funciona" class="menu_item">Como funciona</a>
+        <a href="principal.html#secao_provas_sociais" class="menu_item">Depoimentos</a>
+        <a href="principal.html#secao_contato" class="botao_pequeno botao_primario">Fale com a gente</a>
+        <a href="admin.html" class="menu_item menu_admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="secao_admin" class="secao_conteudo">
+    <h1 class="titulo_secao">Administração de Usuários</h1>
+
+    <div class="bloco_cadastro">
+      <h2 class="titulo_secao_menor">Cadastrar Novo Usuário</h2>
+      <form id="formCadastro" class="formulario_contato">
+        <label class="campo_label" for="nomeUsuario">Nome do Usuário</label>
+        <input id="nomeUsuario" class="campo_input" type="text" name="nomeUsuario" required />
+
+        <label class="campo_label" for="emailUsuario">E-mail</label>
+        <input id="emailUsuario" class="campo_input" type="email" name="emailUsuario" required />
+
+        <div class="acoes_formulario">
+          <button class="botao_grande botao_primario" type="submit" id="btnCadastrar">Cadastrar</button>
+          <button class="botao_grande botao_secundario" type="button" id="btnLimparCampos">Limpar Campos</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="bloco_lista">
+      <h2 class="titulo_secao_menor">Usuários Cadastrados</h2>
+      
+      <div class="acoes_lista">
+        <input type="text" id="inputPesquisa" class="campo_input" placeholder="Pesquisar por nome ou e-mail..." />
+        <button class="botao_pequeno botao_secundario" type="button" id="btnLimparLista">Excluir Todos</button>
+      </div>
+
+      <ul id="listaUsuarios" class="lista_usuarios">
+        <!-- Itens da lista serão inseridos aqui pelo JavaScript -->
+      </ul>
+    </div>
+  </section>
+
+  <footer id="rodape_admin">
+    <div class="rodape_conteudo">
+      <div class="rodape_logo_linha">
+        <img class="rodape_logo" src="assets/imgs/logo-saqa-horizontal.png" alt="Logo SAQA">
+        <p class="rodape_slogan">Tecnologia a favor da segurança alimentar.</p>
+      </div>
+
+      <div class="rodape_creditos">
+        <span>© 2025 SAQA — Sistema Automatizado de Qualidade Alimentar</span>
+        <span>•</span>
+        <a class="rodape_link" href="https://marianagpalacios.github.io/CurriculumVitae-FrontEnd/" target="_blank" rel="noopener">
+          Currículo — Mariana Palácios
+        </a>
+        <span>•</span>
+        <a class="rodape_link" href="https://trevizanrafael.github.io/curriculo/" target="_blank" rel="noopener">
+          Currículo — Rafael Trevizan
+        </a>
+        <span>•</span>
+        <a class="rodape_link" href="https://joaovitorrom.github.io/Web-Front-End/" target="_blank" rel="noopener">
+          Currículo — João Vitor Romani
+        </a>
+        <span>•</span>
+        <a class="rodape_link">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
